@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    animation: blink 1s infinite;
+}
+
+.gift-box {
+    width: 180px;
+    height: 180px;
+    background: #ff6b6b;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+.gift-box::before, .gift-box::after {
+    content: '';
+    position: absolute;
+    background: #feca57;
+}
+
+.gift-box::before {
+    width: 100%;
+    height: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gift-box::after {
+    width: 25px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid white;
+}
+
+.click-now {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    animation: blink 1s infinite;
+}
+
+.message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.gift-box.open + .message {
+    display: block;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+audio {
+    display: none; 
+}
+
+.message {
+    display: none;
+    position: fixed; /* Membuat elemen tetap di posisi yang diinginkan */
+    top: 50%; /* Posisikan di tengah vertikal */
+    left: 50%; /* Posisikan di tengah horizontal */
+    transform: translate(-50%, -50%); /* Pastikan elemen benar-benar di tengah */
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 100%; /* Membatasi lebar maksimum */
+    width: 500px; /* Lebar default untuk layar besar */
+    word-wrap: break-word; /* Bungkus kata jika terlalu panjang */
+    overflow-wrap: break-word; /* Alternatif untuk browser modern */
+    text-align: center;
+}
+
+.typing-effect {
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word; /* Pastikan teks panjang terbungkus */
+    overflow-wrap: break-word; /* Alternatif untuk browser modern */
+    margin-top: 10px;
+}
